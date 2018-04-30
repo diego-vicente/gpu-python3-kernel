@@ -25,7 +25,8 @@ it is inside my Anaconda installation) and copy the folder provided in this
 repository.
 
 #+BEGIN_SRC sh
-~/gpu-python3-kernel $ cp optirun_python3 <anaconda>/share/jupyter/kernels/
+$ git clone https://github.com/DiegoVicen/gpu-python3-kernel.git
+$ cp gpu-python3-kernel/optirun_python3 <anaconda>/share/jupyter/kernels/
 #+END_SRC
 
 This should be enough configuration to enable a Jupyter Kernel with GPU support
@@ -34,7 +35,7 @@ minimizing the power consumption. You can check if it has been correctly
 installed by running this command:
 
 #+BEGIN_SRC
-~/ $ jupyter kernelspec list
+$ jupyter kernelspec list
 Available kernels:
   optirun_python3    <anaconda>/jupyter/kernels/optirun_python3
   python3            <anaconda>/jupyter/kernels/python3
