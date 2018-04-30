@@ -1,0 +1,50 @@
+#+TITLE:  GPU Accelerated Python 3 Kernel for Optimus-Nvidia GPUs
+#+AUTHOR: Diego Vicente
+#+EMAIL:  mail@diego.codes
+
+This small hack enables an easy way to switch to GPU accelerated hardware with
+Nvidia's Optimus hardware. This gear can be found in laptops where two
+different GPUs are provided: an integrated Intel GPU and a dedicated, more
+powerful Nvidia GPU. These provides a less powerful, efficient GPU for normal
+use and a more capable and energy-demanding one.
+
+Although Windows takes care of this by itself, GNU/Linux systems usually
+require greater configuration to work. A common alternative is to use
+=bbswitch= and =bumblebee=, which allow seamless switching between cards when
+properly configured. These utilities provide the =optirun= command, which turns
+on and off the dedicated GPU just for the command that is being invoked into.
+For that reason, using Jupyter notebooks with the Nvidia GPU can be achieved by
+running =optirun jupyter notebook=. However, this requires the server to be
+completely restarted if GPU usage is required. On the other hand, running this
+command every time can be produce increased battery consumption even if it is
+not needed.
+
+For that reason, this kernel can provide an easier way and better granularity
+for notebooks. To install this kernel, locate your kernel folder (in my case,
+it is inside my Anaconda installation) and copy the folder provided in this
+repository.
+
+#+BEGIN_SRC sh
+~/gpu-python3-kernel $ cp optirun_python3 <anaconda>/share/jupyter/kernels/
+#+END_SRC
+
+This should be enough configuration to enable a Jupyter Kernel with GPU support
+that can be assigned to certain notebooks and provide seamless execution while
+minimizing the power consumption. You can check if it has been correctly
+installed by running this command:
+
+#+BEGIN_SRC
+~/ $ jupyter kernelspec list
+Available kernels:
+  optirun_python3    <anaconda>/jupyter/kernels/optirun_python3
+  python3            <anaconda>/jupyter/kernels/python3
+#+END_SRC
+
+And then selecting the kernel "Python 3 [GPU]" in the notebook once it is
+necessary.
+
+This is a hacky solution and probably not a general enough one: some
+modification on your side may be required to adapt it to your requirements.
+This code is licensed under MIT so feel absolute freedom to modify or
+redistribute it. If you run into any problem or have any suggestion, do not
+hesitate to create a new issue.
