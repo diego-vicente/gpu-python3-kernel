@@ -1,11 +1,11 @@
-#+TITLE:  GPU Accelerated Python 3 Kernel for Optimus-Nvidia GPUs
+#+TITLE:  GPU-accelerated Python 3 kernel for NVIDIA Optimus
 #+AUTHOR: Diego Vicente
 #+EMAIL:  mail@diego.codes
 
 This small hack enables an easy way to switch to GPU accelerated hardware with
-Nvidia's Optimus hardware. This gear can be found in laptops where two
+NVIDIA'S Optimus hardware. This gear can be found in laptops where two
 different GPUs are provided: an integrated Intel GPU and a dedicated, more
-powerful Nvidia GPU. These provides a less powerful, efficient GPU for normal
+powerful NVIDIA GPU. These provides a less powerful, efficient GPU for normal
 use and a more capable and energy-demanding one.
 
 Although Windows takes care of this by itself, GNU/Linux systems usually
@@ -13,7 +13,7 @@ require greater configuration to work. A common alternative is to use
 =bbswitch= and =bumblebee=, which allow seamless switching between cards when
 properly configured. These utilities provide the =optirun= command, which turns
 on and off the dedicated GPU just for the command that is being invoked into.
-For that reason, using Jupyter notebooks with the Nvidia GPU can be achieved by
+For that reason, using Jupyter notebooks with the NVIDIA GPU can be achieved by
 running =optirun jupyter notebook=. However, this requires the server to be
 completely restarted if GPU usage is required. On the other hand, running this
 command every time can be produce increased battery consumption even if it is
