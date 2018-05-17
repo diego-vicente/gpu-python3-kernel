@@ -20,13 +20,12 @@ command every time can be produce increased battery consumption even if it is
 not needed.
 
 For that reason, this kernel can provide an easier way and better granularity
-for notebooks. To install this kernel, locate your kernel folder (in my case,
-it is inside my Anaconda installation) and copy the folder provided in this
-repository.
+for notebooks. To install this kernel, run the following commands:
 
 #+BEGIN_SRC sh
 $ git clone https://github.com/DiegoVicen/gpu-python3-kernel.git
-$ cp gpu-python3-kernel/optirun_python3 <anaconda>/share/jupyter/kernels/
+$ cd gpu-python3-kernel
+$ jupyter kernelspec install --user optirun_python3
 #+END_SRC
 
 This should be enough configuration to enable a Jupyter Kernel with GPU support
